@@ -281,6 +281,7 @@ const mapGuest = {
 	tranguyen: "Bạn Trà và gia đình",
 	trangpham: "Bạn Trang và gia đình",
 	mintec: "Những người ae mintec",
+	hieutruong: "Bạn Hiếu và người thương",
 
 }
 
