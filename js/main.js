@@ -46,6 +46,10 @@ window.onload = (event) =>{
 			document.getElementById('content').value = text;
 		});
 	});
+
+	setTimeout(() => {
+		addGuest();
+	}, 100);
 };
 
 	window.addEventListener('scroll',(event) => {
@@ -269,4 +273,27 @@ function removeVietnameseTones(str) {
 	return str;
 }
 
+const mapGuest = {
+	ducpham: "Bạn Đức và người thương",
+	xuantruong: "Bạn Trường và người thương",
+	haipham: "Bạn Hải và người thương",
+	sentruong: "Bạn Sen và người thương",
+	tranguyen: "Bạn Trà và gia đình",
+	trangpham: "Bạn Trang và gia đình",
+	mintec: "Những người ae mintec",
+
+}
+
+function addGuest(){
+	const urlParams = new URLSearchParams(window.location.search);
+	const guest = urlParams.get('guest');
+	if(guest){
+		document.getElementsByClassName("invitation-title")[0].style.display = 'block';
+		document.getElementsByClassName("invitation-des")[0].textContent = mapGuest[guest];
+		document.getElementsByClassName("invitation-des")[0].style.display = 'block';
+	}
+	else{
+		document.getElementsByClassName("nam-chi")[0].style.display = 'block';
+	}
+}
 

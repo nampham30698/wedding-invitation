@@ -7903,3 +7903,7 @@ text-transform:uppercase;
         transform: scale(1);
     }
 }
+
+.invitation-title, .invitation-des, .nam-chi{
+    display: none;
+}
