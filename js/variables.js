@@ -18,7 +18,7 @@ var hero_full_screen = true;                    //If true, the hero section will
 var slidehow_images = [
     "images/21.jpg",
     "images/20.jpg",
-    "images/24.jpg",
+    "images/24.jpeg",
 ];
 
 //TIMELINE PARALLAX
