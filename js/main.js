@@ -273,25 +273,32 @@ function removeVietnameseTones(str) {
 	return str;
 }
 
-const mapGuest = {
-	ducpham: "Bạn Đức và người thương",
-	xuantruong: "Bạn Trường và người thương",
-	haipham: "Bạn Hải và người thương",
-	sentruong: "Bạn Sen và người thương",
-	tranguyen: "Bạn Trà và gia đình",
-	trangpham: "Bạn Trang và gia đình",
-	mintec: "Những người ae mintec",
-	hieutruong: "Bạn Hiếu và người thương",
-	thaodinh: "Bạn Thảo và người thương",
-
-}
+const mapGuest = [
+	{
+		key:"mintec",
+		value:"Những người ae Mintec"
+	},
+	{
+		key:"truong-pham",
+		value:"Bạn Trường và người thương"
+	},
+	{
+		key:"duc-pham",
+		value:"Bạn Đức và người thương"
+	},
+	{
+		key:"thu-thao",
+		value:"Bạn Thảo và người thương"
+	}
+]
 
 function addGuest(){
 	const urlParams = new URLSearchParams(window.location.search);
-	const guest = urlParams.get('guest');
-	if(guest){
+	const guestKey = urlParams.get('guest');
+	const guestValue = mapGuest.find(x => x.key == guestKey);
+	if(guestKey && guestValue){
 		document.getElementsByClassName("invitation-title")[0].style.display = 'block';
-		document.getElementsByClassName("invitation-des")[0].textContent = mapGuest[guest];
+		document.getElementsByClassName("invitation-des")[0].textContent = guestValue.value;
 		document.getElementsByClassName("invitation-des")[0].style.display = 'block';
 	}
 	else{
