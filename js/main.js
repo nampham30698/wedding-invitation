@@ -289,6 +289,10 @@ const mapGuest = [
 	{
 		key:"thu-thao",
 		value:"Bạn Thảo và người thương"
+	},
+	{
+		key:"sen-oc",
+		value:"Bạn Sen và người thương"
 	}
 ]
 
